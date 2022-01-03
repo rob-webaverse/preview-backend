@@ -1,4 +1,4 @@
-FROM alekzonder/puppeteer:latest
+FROM buildkite/docker-puppeteer:latest
 ARG pm2_secret_key	
 ENV LAST_UPDATED 20160605T165400
 ENV PM2_PUBLIC_KEY wicmdcymxzyukdq
