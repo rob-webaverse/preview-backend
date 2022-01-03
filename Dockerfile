@@ -17,6 +17,7 @@ WORKDIR /preview-backend
 # Install dependencies
 RUN npm install -g pm2
 RUN npm install
+RUN chmod -R o+rwx node_modules/puppeteer/.local-chromium
 
 #RUN date +%s%3N | export HOSTNAME=standin
 #RUN pm2 link $PM2_SECRET_KEY $PM2_PUBLIC_KEY $HOSTNAME
