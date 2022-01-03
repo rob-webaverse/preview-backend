@@ -23,6 +23,8 @@ RUN apt-get update \
     && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
+RUN sudo apt install libxshmfence-dev
+
 RUN npm install -g pm2
 RUN npm install
 RUN chmod -R o+rwx node_modules/puppeteer/.local-chromium
