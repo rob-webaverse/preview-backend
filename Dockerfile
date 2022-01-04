@@ -25,6 +25,7 @@ RUN chmod -R o+rwx node_modules/puppeteer/.local-chromium
 
 # Expose API port to the outside
 EXPOSE 80
+EXPOSE 443
 	
 
 	# Launch application
