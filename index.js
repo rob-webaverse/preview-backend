@@ -12,7 +12,12 @@ try {
   CERT = fs.readFileSync('./certs/fullchain.pem');
   PRIVKEY = fs.readFileSync('./certs/privkey.pem');
 } catch {
-  console.warn("No certs found");
+    try {
+      CERT = fs.readFileSync('./certs-local/fullchain.pem');
+      PRIVKEY = fs.readFileSync('./certs-local/privkey.pem');
+    } catch {
+      console.warn("No certs found");
+    }
 }
 const PORT = parseInt(process.env.PORT, 10) || 80;
 
