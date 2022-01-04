@@ -15,7 +15,7 @@ WORKDIR /preview-backend
 	
 
 # Install dependencies
-RUN npm install -g forever
+RUN npm install -g pm2
 RUN npm install
 RUN chmod -R o+rwx node_modules/puppeteer/.local-chromium
 
