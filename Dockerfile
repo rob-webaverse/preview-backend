@@ -15,7 +15,7 @@ WORKDIR /preview-backend
 	
 
 # Install dependencies
-RUN npm install -g pm2
+RUN npm install -g forever
 RUN npm install
 RUN chmod -R o+rwx node_modules/puppeteer/.local-chromium
 
@@ -28,4 +28,4 @@ EXPOSE 80
 	
 
 	# Launch application
-CMD ["pm2-runtime", "index.js", "--secret", "$PM2_SECRET_KEY", "--public", "$PM2_PUBLIC_KEY", "--no-auto-exit", "--instances", "1", "--restart-delay", "60000"]
+CMD forever -a -l /host/forever.log -o stdout.log -e stderr.log index.js
