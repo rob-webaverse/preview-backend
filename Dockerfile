@@ -29,4 +29,4 @@ EXPOSE 443
 	
 
 	# Launch application
-CMD forever -a -l /host/forever.log -o stdout.log -e stderr.log index.js
+CMD ["pm2-runtime", "index.js", "--secret", "$PM2_SECRET_KEY", "--public", "$PM2_PUBLIC_KEY", "--no-auto-exit", "--instances", "1", "--restart-delay", "60000"]
